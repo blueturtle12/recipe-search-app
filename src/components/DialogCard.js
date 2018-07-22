@@ -3,10 +3,14 @@ import Button from '@material-ui/core/Button';
 
 
 class DialogCard extends Component {
+  onButtonClick = () => {
+    window.open(this.props.chosenRecipe.recipe.url,'_blank');
+  }
   render() {
     const { recipe } = this.props.chosenRecipe;
     let dietLabels;
     let ingredients;
+    
     if(recipe.dietLabels) {
         dietLabels = (
             <div>
